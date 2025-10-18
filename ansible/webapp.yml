@@ -1,0 +1,22 @@
+---
+- name: Configure web servers
+  hosts: webservers
+  become: true
+
+  tasks:
+    - name: Ensure httpd is installed
+      package:
+        name: httpd
+        state: present
+
+    - name: Ensure httpd is started and enabled
+      service:
+        name: httpd
+        state: started
+        enabled: true
+
+    - name: Deploy sample page
+      copy:
+        dest: /var/www/html/index.html
+        content: |
+          <html><body><h1>Deployed by Ansible</h1></body></html>
