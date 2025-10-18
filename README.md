@@ -37,26 +37,39 @@ Design and automate the deployment of a **highly available 3-tier web applicatio
 
 ---
 
-🧩 **Architecture Diagram**
+                       +-----------------------------+
+                       |      Internet Gateway       |
+                       +-------------+---------------+
+                                     |
+                           Presentation Layer (Web Tier)
+                 +-------------------+-------------------+
+                 |                                       |
+            +---------+                             +---------+
+            |  ALB    |                             |  ALB    |
+            +----+----+                             +----+----+
+                 |                                       |
+            +----+----+                             +----+----+
+            | EC2 #1  |                             | EC2 #2  |  <-- Auto Scaling
+            +---------+                             +---------+
 
-```
-                    +------------------------------+
-                    |      Internet Gateway (IGW)  |
-                    +--------------+---------------+
-                                   |
-                             Public Subnets
-                     +----------+        +----------+
-                     |   ALB    |<------>|   ALB    |
-                     +----------+        +----------+
-                          |                    |
-                     +----------+         +----------+
-                     |  EC2 #1  |         |  EC2 #2  |  <-- Auto Scaling Group
-                     +----------+         +----------+
-                          | Private Subnet (NAT Access)
-                     +------------------------------+
-                     |       RDS MySQL Database     |
-                     +------------------------------+
-```
+                     Application Layer (App Tier)
+                 +-------------------+-------------------+
+                 |                                       |
+            +---------+                             +---------+
+            | EC2 #1  |                             | EC2 #2  |
+            | Private |                             | Private |
+            | Subnet  |                             | Subnet  |
+            +---------+                             +---------+
+
+                       Database Layer (DB Tier)
+                       +-----------------------------+
+                       |       RDS MySQL Database     |
+                       +-----------------------------+
+
+Tools:
+Terraform  --> Infrastructure provisioning
+Ansible    --> Configuration management
+
 
 ---
 
