@@ -173,8 +173,3 @@ aws_3Tier_webapp_Terraform/
 
 ---
 
-💡 **Next Steps**
-
-* Add Terraform Cloud or Jenkins CI/CD for continuous provisioning.  
-* Extend monitoring using Prometheus + Grafana dashboards.  
-* Implement Route53 & CloudFront for global access and caching.
