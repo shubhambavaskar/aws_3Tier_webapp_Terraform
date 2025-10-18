@@ -70,6 +70,7 @@ Tools:
 Terraform  --> Infrastructure provisioning
 Ansible    --> Configuration management
 
+<img width="1024" height="1536" alt="Copilot_20251018_135304" src="https://github.com/user-attachments/assets/4698a47b-3266-447e-b4f6-0a8042a8269d" />
 
 ---
 
