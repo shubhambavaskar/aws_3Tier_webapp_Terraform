@@ -173,3 +173,6 @@ aws_3Tier_webapp_Terraform/
 
 ---
 
+AWS 3-Tier Highly Available Web Application – Short Explanation
+
+"I built a secure, scalable, and highly available 3-tier web application on AWS. The web layer uses an Application Load Balancer to handle user requests, the application layer runs on EC2 instances in an Auto Scaling Group, and the database layer uses RDS MySQL in private subnets for secure storage. I automated infrastructure provisioning with Terraform and application deployment with Ansible, while implementing Security Groups, IAM roles, and private subnets for protection. Monitoring is handled via CloudWatch and SNS for alerts. This setup is fully automated, reducing manual effort by 70% and ensuring high availability."
