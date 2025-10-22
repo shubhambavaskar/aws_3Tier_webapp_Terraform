@@ -72,7 +72,7 @@ variable "db_username" {
 variable "db_password" {
   type      = string
   sensitive = true
-  default   = "ReplaceWithStrongDBPassw0rd!" # <<< CHANGE THIS in terraform.tfvars (do not commit)
+  default   = "My@passwd" # <<< CHANGE THIS in terraform.tfvars (do not commit)
 }
 
 variable "db_allocated_storage" {
