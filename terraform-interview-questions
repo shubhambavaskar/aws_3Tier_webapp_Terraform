@@ -1,0 +1,171 @@
+Perfect 💪 Let’s make this super useful for **your Terraform + DevOps interview prep** — especially for **freshers** or **junior cloud engineers**.
+
+Below is a **complete list of Terraform interview questions** (categorized and simplified) — **with short, ready-to-speak answers** 🧠
+
+---
+
+## 🌱 **1. Terraform Basics**
+
+These test if you understand what Terraform *is and why it’s used.*
+
+**Q1. What is Terraform?**
+→ Terraform is an open-source tool by HashiCorp used for automating infrastructure provisioning using code (Infrastructure as Code).
+
+**Q2. What is Infrastructure as Code (IaC)?**
+→ IaC means managing and provisioning infrastructure using code instead of manual setup. It ensures consistency and automation.
+
+**Q3. Why do we use Terraform?**
+→ Because it automates cloud infrastructure setup, supports multiple cloud providers, ensures repeatability, and helps with version control.
+
+**Q4. What language does Terraform use?**
+→ Terraform uses **HCL (HashiCorp Configuration Language)**.
+
+**Q5. Difference between Terraform and Ansible?**
+→ Terraform is for **infrastructure provisioning**, while Ansible is for **configuration management** after infrastructure is ready.
+
+---
+
+## ⚙️ **2. Terraform Core Concepts**
+
+**Q6. What is a provider?**
+→ A provider is a plugin that lets Terraform interact with cloud services like AWS, Azure, or GCP.
+
+**Q7. What is a resource?**
+→ A resource defines an actual infrastructure component like an EC2 instance, S3 bucket, or VPC.
+
+**Q8. What is a module?**
+→ A module is a collection of Terraform files reused across multiple configurations.
+
+**Q9. What are variables in Terraform?**
+→ Variables are used to store input values, making configurations reusable and flexible.
+
+**Q10. What are outputs in Terraform?**
+→ Outputs are used to display or pass useful information after Terraform applies (like EC2 public IP or RDS endpoint).
+
+---
+
+## 💾 **3. Terraform State**
+
+**Q11. What is a Terraform state file?**
+→ The state file (`terraform.tfstate`) tracks the current state of your infrastructure. Terraform uses it to know what exists.
+
+**Q12. Why is the Terraform state file important?**
+→ It helps Terraform plan updates accurately and keeps track of real-world resources.
+
+**Q13. How do you store the state file securely?**
+→ Use **remote backends** like AWS S3 with DynamoDB locking to avoid corruption in team environments.
+
+**Q14. What happens if the state file is deleted?**
+→ Terraform loses track of resources, and may recreate existing ones, leading to duplicates or errors.
+
+---
+
+## 🧩 **4. Terraform Workflow**
+
+**Q15. What is the basic Terraform workflow?**
+→ **Write → Init → Plan → Apply → Destroy**
+
+**Q16. Explain these commands:**
+
+* `terraform init` → Initializes the directory and installs providers
+* `terraform plan` → Shows what changes will happen
+* `terraform apply` → Applies the changes (creates resources)
+* `terraform destroy` → Deletes all resources
+* `terraform validate` → Checks syntax
+* `terraform fmt` → Formats code
+
+---
+
+## 📦 **5. Terraform Files & Structure**
+
+**Q17. What are the main Terraform file types?**
+→
+
+* `main.tf` → Main configuration
+* `variables.tf` → Variable definitions
+* `outputs.tf` → Outputs
+* `terraform.tfvars` → Actual values for variables
+* `provider.tf` → Provider details
+
+**Q18. Can we have multiple .tf files in one directory?**
+→ Yes, Terraform automatically loads all `.tf` files in the same directory.
+
+---
+
+## 🔄 **6. Advanced Concepts (Asked to Smart Freshers)**
+
+**Q19. What is `terraform refresh`?**
+→ Updates the state file with real infrastructure data.
+
+**Q20. What is the use of `depends_on`?**
+→ It defines resource dependencies to control creation order.
+
+**Q21. What is a data source in Terraform?**
+→ Data sources allow Terraform to **fetch existing information** from the cloud (e.g., use an existing VPC).
+
+**Q22. What is `terraform import`?**
+→ Used to bring existing cloud resources under Terraform management.
+
+**Q23. What is `terraform taint` and `untaint`?**
+→ Marks a resource for recreation on the next apply (taint), or removes that mark (untaint).
+
+**Q24. What is `terraform output` command used for?**
+→ To display the values of outputs after apply.
+
+---
+
+## ☁️ **7. Terraform with Cloud (AWS Focus)**
+
+**Q25. How do you use Terraform with AWS?**
+→ By configuring the AWS provider with credentials and defining resources like `aws_instance`, `aws_vpc`, etc.
+
+**Q26. How do you handle secrets in Terraform?**
+→ Use environment variables, AWS Secrets Manager, or Vault — never hardcode secrets.
+
+**Q27. What are remote backends?**
+→ Remote storage for the state file (like S3, Azure Blob, GCS). Helps with team collaboration.
+
+---
+
+## 👨‍💻 **8. Real Project / Practical Questions**
+
+**Q28. How do you version control Terraform code?**
+→ Using Git and GitHub (each environment in different branches or workspaces).
+
+**Q29. What is a Terraform workspace?**
+→ Workspaces let you manage multiple environments (like dev, test, prod) with one configuration.
+
+**Q30. What are Terraform best practices?**
+→
+✅ Keep variables and outputs organized
+✅ Use remote state
+✅ Use modules for reusability
+✅ Use version control (Git)
+✅ Run `terraform plan` before `apply`
+
+---
+
+## 🧠 **9. Troubleshooting / Scenario-Based**
+
+**Q31. What happens if two people run Terraform apply at the same time?**
+→ The state file may get corrupted — that’s why we use **state locking** (e.g., DynamoDB lock for S3 backend).
+
+**Q32. Terraform shows “drift”. What does it mean?**
+→ Drift means the actual infrastructure has changed outside of Terraform’s control.
+
+**Q33. How do you update a resource in Terraform?**
+→ Change the configuration and run `terraform apply`. Terraform updates only the changed parts.
+
+---
+
+## 🧩 **10. Bonus (HR + Understanding Questions)**
+
+**Q34. Why did you choose Terraform over CloudFormation?**
+→ Terraform is multi-cloud, simpler syntax, and reusable with modules.
+
+**Q35. What is your hands-on project using Terraform?**
+→ *(Example)* “I deployed a 3-tier web app on AWS using Terraform for infrastructure and Ansible for configuration.”
+
+---
+
+Would you like me to give you this in **PDF format (for quick revision)** or as a **“Flashcard-style” cheat sheet** (for speaking practice before interview)?
