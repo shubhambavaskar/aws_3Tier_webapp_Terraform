@@ -19,4 +19,4 @@
       copy:
         dest: /var/www/html/index.html
         content: |
-          <html><body><h1>Deployed by Ansible</h1></body></html>
+          <html><body><h1> HELLOW DEVOPS..!</h1></body></html>
