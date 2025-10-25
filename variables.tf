@@ -1,3 +1,14 @@
+variable "aws_region" {
+  type        = string
+  default     = "ap-south-1"
+  description = "AWS region for deployment"
+}
+
+variable "aws_profile" {
+  type        = string
+  default     = "default"
+}
+
 variable "project_name" {
   type    = string
   default = "aws-3tier-webapp"
@@ -28,6 +39,12 @@ variable "db_subnets" {
   default = ["10.0.201.0/24", "10.0.202.0/24"]
 }
 
+variable "ami_id" {
+  type        = string
+  description = "AMI ID for EC2 instances"
+  default     = "ami-0c2b8ca1dad447f8a"
+}
+
 variable "instance_type" {
   type    = string
   default = "t3.micro"
@@ -50,18 +67,19 @@ variable "desired_capacity" {
 
 variable "key_name" {
   type        = string
-  description = "Name for the key pair to use for EC2"
-  default     = "shubham-key" # <<< CHANGE if you want different name
+  description = "Key pair name for EC2"
+  default     = "shubham-key"
 }
 
 variable "save_private_key_path" {
   type    = string
-  default = "./shubham-key.pem" # private key will be saved here (local_file)
+  default = "./shubham-key.pem"
 }
 
 variable "allowed_ssh_cidr" {
-  type    = string
-  default = "YOUR_IP/32" # <<< CHANGE THIS to your public IP/CIDR (ex: 203.0.113.5/32)
+  type        = string
+  description = "Allowed IP CIDR for SSH access"
+  default     = "203.0.113.10/32" # <-- Change this
 }
 
 variable "db_username" {
@@ -72,7 +90,7 @@ variable "db_username" {
 variable "db_password" {
   type      = string
   sensitive = true
-  default   = "My@passwd" # <<< CHANGE THIS in terraform.tfvars (do not commit)
+  default   = "CHANGE_ME" # Move to terraform.tfvars
 }
 
 variable "db_allocated_storage" {
@@ -87,5 +105,5 @@ variable "db_instance_class" {
 
 variable "alb_certificate_arn" {
   type    = string
-  default = "" # optional - if using HTTPS, provide ACM certificate ARN
+  default = ""
 }
