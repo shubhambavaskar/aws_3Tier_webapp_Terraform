@@ -1,7 +1,10 @@
----
 - name: Configure web servers
   hosts: webservers
   become: true
+
+  vars:
+    project_name: "Terraform 3-Tier App"
+    db_endpoint: "mydb-instance.c9akcihdf8.us-east-1.rds.amazonaws.com"
 
   tasks:
     - name: Ensure httpd is installed
@@ -19,4 +22,10 @@
       copy:
         dest: /var/www/html/index.html
         content: |
-          <html><body><h1> HELLOW DEVOPS..!</h1></body></html>
+          <html>
+            <head><title>{{ project_name }}</title></head>
+            <body>
+              <h1>Welcome to {{ project_name }} (Auto-provisioned)</h1>
+              <p>App server connected to DB endpoint: {{ db_endpoint }}</p>
+            </body>
+          </html>
